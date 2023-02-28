@@ -24,7 +24,7 @@ function App() {
       <Header />
       {/* section hero 1 */}
       <Hero />
-      <HeroDetail />
+      {/* <HeroDetail /> */}
       {/* section trailer */}
       <div className="container bg-slate-300 text-white">makan sotong</div>
       {/* <Footer /> */}

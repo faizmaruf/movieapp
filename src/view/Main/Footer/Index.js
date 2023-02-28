@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="bg-blue-500 container">
       {!matches && <div className="mt-10"></div>}
-      {!matches && <BottomBarNavigation />}
+      {/* {!matches && <BottomBarNavigation />} */}
       <h1>ini footer</h1>
     </div>
   );
