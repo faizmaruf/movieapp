@@ -17,7 +17,7 @@ const HeroDetail = () => {
             </div>
             <p className="font-bold text-sm">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
             <div className="flex flex-col gap-x-3">
-              <h2 className="font-bold text-2xl">Cast</h2>
+              <h2 className="text-head-h2">Cast</h2>
               <div className="flex gap-2 flex-wrap">
                 <div className="flex h-40 w-24 flex-col">
                   <div className="bg-black w-full basis-10/12"></div>

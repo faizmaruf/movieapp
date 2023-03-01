@@ -4,6 +4,7 @@
 
 * {
   /* border: 1px solid yellow; */
+  /* overflow-x: hidden; Hide horizontal scrollbar */
 }
 .container-main {
   margin: 0;
@@ -30,7 +31,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #010101;
+  background-color: #0f0f0f;
   @apply w-screen;
 }
 
@@ -44,6 +45,9 @@
 .active {
   border-bottom: 1px solid red;
 }
+.active-bottom-bar {
+  border-bottom: 1px solid red;
+}
 .navbar-scroll-up {
   background-color: #ffffff00;
   top: 0;
@@ -55,7 +59,7 @@
   transition: background-color 0.2s linear;
 }
 .navbar-scroll-down {
-  background-color: #010101;
+  background-color: #0f0f0f;
   top: 0px;
   transition: all 0.2s;
   -webkit-transition: background-color 0.2s linear;
@@ -63,6 +67,18 @@
   -o-transition: background-color 0.2s linear;
   -ms-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
+}
+.text-head-h2 {
+  @apply font-bold text-xl;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @media (min-width: 576px) {

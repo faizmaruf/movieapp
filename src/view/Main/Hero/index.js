@@ -34,8 +34,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full absolute z-10 bg-black opacity-60 "></div>
-      <div className="w-full h-1/3 absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-black "></div>
+      <div className="w-full h-full absolute z-10 bg-primaryBg opacity-60 "></div>
+      <div className="w-full h-1/3 absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg "></div>
       <img src="https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w" className="object-cover w-full h-full absolute z-0 overflow-hidden" />
     </div>
   );
