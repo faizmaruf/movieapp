@@ -18,6 +18,7 @@
   padding-left: 5px;
   margin-right: auto;
   margin-left: auto;
+  /* min-height: ; */
   /* margin-bottom: 3rem; */
 }
 /* .container {
@@ -46,11 +47,11 @@
   border-bottom: 1px solid red;
 }
 .active-bottom-bar {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid white;
 }
 .navbar-scroll-up {
   background-color: #ffffff00;
-  top: 0;
+  top: -1px;
   transition: all 0.5s;
   -webkit-transition: background-color 0.2s linear;
   -moz-transition: background-color 0.2s linear;
@@ -60,7 +61,7 @@
 }
 .navbar-scroll-down {
   background-color: #0f0f0f;
-  top: 0px;
+  top: -1px;
   transition: all 0.2s;
   -webkit-transition: background-color 0.2s linear;
   -moz-transition: background-color 0.2s linear;
@@ -69,7 +70,7 @@
   transition: background-color 0.2s linear;
 }
 .text-head-h2 {
-  @apply font-bold text-xl;
+  @apply font-bold text-xl ml-3;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

@@ -1,8 +1,6 @@
-import React from "react";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import Navbar from "../../../components/Navbar";
-import BottomBarNavigation from "../../../components/BottomBarNavigation";
-import { useState, useEffect } from "react";
+import Navbar from "../Navbar";
+import BottomBarNavigation from "../BottomBarNavigation";
+import { React, useState, useEffect } from "react";
 
 const Header = () => {
   const [matches, setMatches] = useState(window.matchMedia("(min-width: 768px)").matches);

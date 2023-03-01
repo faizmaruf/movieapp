@@ -1,8 +1,14 @@
 import { Gradient } from "@mui/icons-material";
 import { React, useState } from "react";
+import apiConfig from "../../../api/apiConfig";
 import ModalTrailer from "../../../components/ModalTrailer";
 
-const Hero = () => {
+const Hero = (props) => {
+  const { movieItems } = props;
+  const movieItem = movieItems.slice(7, 8);
+  const background = apiConfig.originalImage(movieItem[0]?.backdrop_path);
+  const poster = apiConfig.originalImage(movieItem[0]?.poster_path);
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -16,11 +22,11 @@ const Hero = () => {
 
   return (
     <div className="relative w-full h-screen">
-      <div className="absolute w-full  h-full text-white z-20 flex">
+      <div className="absolute w-full  h-full text-white z-20 flex md:mt-0">
         <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row gap-7">
-          <div className="basis-7/12 flex flex-col gap-y-9 justify-center px-2">
-            <h1 className="font-bold text-7xl">Venom</h1>
-            <p className="font-bold text-sm">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+          <div className="basis-7/12 flex flex-col gap-y-6 md:gap-y-9 justify-center px-2">
+            <h1 className="font-bold text-4xl md:text-7xl">{movieItem[0]?.original_title}</h1>
+            <p className="font-bold text-xs md:text-sm">{movieItem[0]?.overview}hvhv</p>
             <div className="flex gap-x-3">
               <button className="bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold">Watch Now</button>
               <button className="bg-white border-white rounded-3xl py-2 px-6 text-primary shadow-xl font-semibold" onClick={handleClickOpen}>
@@ -29,14 +35,14 @@ const Hero = () => {
               <ModalTrailer isOpen={open} handleClose={handleClose} srcVideo={srcVideo} />
             </div>
           </div>
-          <div className=" basis-5/12 px-1">
-            <img src="https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w" className="object-cover w-full overflow-hidden  rounded-3xl py-1 h-full" />
+          <div className=" basis-5/12 xl:px-24 md:px-0 hidden md:block  ">
+            <img src={poster} className="object-cover w-full overflow-hidden hidden md:block  rounded-3xl py-1 h-full" />
           </div>
         </div>
       </div>
       <div className="w-full h-full absolute z-10 bg-primaryBg opacity-60 "></div>
       <div className="w-full h-1/3 absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg "></div>
-      <img src="https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w" className="object-cover w-full h-full absolute z-0 overflow-hidden" />
+      <img src={background} className="object-cover w-full h-full absolute z-0 overflow-hidden" />
     </div>
   );
 };

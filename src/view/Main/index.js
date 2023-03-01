@@ -1,47 +1,62 @@
 import "../../App.css";
+import axios from "axios";
 import { useState, useEffect } from "react";
 
-import Header from "./Header";
-import Footer from "./Footer/Index";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer/Index";
 import Hero from "./Hero";
 import HeroDetail from "./HeroDetail";
 import TrandingMovies from "./TrandingMovies";
+import Catalog from "../../components/Catalog";
 
-// import getData from "../api";
-
-// import { category, movieType, tvType } from "../api/tmdbApi";
-// import tmdbApi from "../api/tmdbApi";
-// import apiConfig from "../api/apiConfig";
+import { category, movieType, tvType } from "../../api/tmdbApi";
+import tmdbApi from "../../api/tmdbApi";
+import apiConfig from "../../api/apiConfig";
+import Loading from "../../components/Loading";
 
 function Home() {
-  // console.log(category, "ini kategory");
+  const [movieItems, setMovieItems] = useState([]);
+  const [seriesItems, setSeriesItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const countItem = 10;
 
-  // const { category } = useParams();
-
-  // const [casts, setCasts] = useState([]);
-
-  // useEffect(() => {
-  //   const getCredits = async () => {
-  //     const response = await tmdbApi.credits(category, 1);
-  //     setCasts(response.cast.slice(0, 5));
-  //   };
-  //   getCredits();
-  //   console.log(casts, "ini dari useEffect");
-  // }, []);
+  useEffect(() => {
+    const getMovies = async () => {
+      try {
+        const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`);
+        setMovieItems(response.data.results);
+      } catch (error) {
+        console.log(error, " << error");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    const getTvSeries = async () => {
+      try {
+        const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
+        const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&page=1`);
+        setSeriesItems(response.data.results);
+      } catch (error) {
+        console.log(error, " << error");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getMovies();
+    getTvSeries();
+  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
-      {/* Header */}
       <Header />
-      {/* section hero 1 */}
-      <Hero />
-      {/* section tranding movies  */}
+      <Hero movieItems={movieItems} />
       <TrandingMovies />
-      <TrandingMovies />
-      {/* <HeroDetail /> */}
-      {/* section trailer */}
-
-      <div className="container h-32 text-white">makan sotong</div>
-      {/* <Footer /> */}
+      <Catalog type={"Movies"} countItem={countItem} items={movieItems} />
+      <Catalog type={"TV Series"} countItem={countItem} items={seriesItems} />
+      <Footer />
     </div>
   );
 }

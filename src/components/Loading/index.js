@@ -1,9 +1,10 @@
-import React from "react";
-import Header from "../../components/Header";
-import footerbg from "../../../src/assets/images/footer-bg-movie-app.jpeg";
-import Footer from "../../components/Footer/Index";
-
-const NotFound = () => {
+import * as React from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import Header from "../Header";
+import Footer from "../Footer/Index";
+import footerbg from "../../assets/images/footer-bg-movie-app.jpeg";
+const Loading = () => {
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
@@ -11,8 +12,9 @@ const NotFound = () => {
         <div className="absolute w-full  h-full text-white z-20 flex">
           <div className="container my-auto flex flex-col-reverse  md:flex-row ">
             <div className="basis-12/12 flex w-full flex-col gap-y-9 justify-center px-2">
-              <h1 className="font-bold text-9xl text-center">404</h1>
-              <p className="font-bold text-lg text-center">Page Not Found</p>
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <CircularProgress />
+              </Box>
             </div>
           </div>
         </div>
@@ -25,4 +27,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Loading;
