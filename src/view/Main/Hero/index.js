@@ -35,7 +35,7 @@ const Hero = (props) => {
               <ModalTrailer isOpen={open} handleClose={handleClose} srcVideo={srcVideo} />
             </div>
           </div>
-          <div className=" basis-5/12 xl:px-24 md:px-0 hidden md:block  ">
+          <div className="basis-5/12 xl:px-24 md:px-0 hidden md:block">
             <img src={poster} className="object-cover w-full overflow-hidden hidden md:block  rounded-3xl py-1 h-full" />
           </div>
         </div>
@@ -48,6 +48,3 @@ const Hero = (props) => {
 };
 
 export default Hero;
-// 1. font
-// 2. bg Gradient
-// 3. bg image

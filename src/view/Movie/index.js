@@ -14,7 +14,6 @@ const Movie = () => {
 
   useEffect(() => {
     const getMovies = async () => {
-      // const params = { page: 1 };
       try {
         const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
         const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`);
@@ -34,7 +33,7 @@ const Movie = () => {
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
       <div className="relative w-full min-h-screen">
-        <Catalog type={"Movies"} countItem={countItem} items={movieItems} />
+        <Catalog category={"movie"} countItem={countItem} items={movieItems} />
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg  "></div>
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg "></div>
         <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />

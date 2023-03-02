@@ -33,7 +33,7 @@ function TvSeries() {
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
       <div className="relative w-full min-h-screen">
-        <Catalog type={"TV Series"} countItem={countItem} items={seriesItems} />
+        <Catalog category={"tv"} countItem={countItem} items={seriesItems} />
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
         <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />

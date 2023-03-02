@@ -6,6 +6,7 @@
   /* border: 1px solid yellow; */
   /* overflow-x: hidden; Hide horizontal scrollbar */
 }
+
 .container-main {
   margin: 0;
   padding: 0;
@@ -41,7 +42,7 @@
 }
 .btn-tag {
   border: 1px solid #fff;
-  @apply bg-black  rounded-3xl py-2 px-5 shadow-2xl font-bold text-xs;
+  @apply bg-black  rounded-3xl shadow-2xl font-bold text-xs py-1 px-2 md:py-2 md:px-5;
 }
 .active {
   border-bottom: 1px solid red;
@@ -70,7 +71,7 @@
   transition: background-color 0.2s linear;
 }
 .text-head-h2 {
-  @apply font-bold text-xl ml-3;
+  @apply font-bold text-xl ml-3 md:ml-0;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

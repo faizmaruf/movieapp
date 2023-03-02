@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer/Index";
 import Hero from "./Hero";
-import HeroDetail from "./HeroDetail";
+import HeroDetail from "../Detail/HeroDetail";
 import TrandingMovies from "./TrandingMovies";
 import Catalog from "../../components/Catalog";
 
@@ -54,8 +54,8 @@ function Home() {
       <Header />
       <Hero movieItems={movieItems} />
       <TrandingMovies />
-      <Catalog type={"Movies"} countItem={countItem} items={movieItems} />
-      <Catalog type={"TV Series"} countItem={countItem} items={seriesItems} />
+      <Catalog category={"movie"} countItem={countItem} items={movieItems} />
+      <Catalog category={"tv"} countItem={countItem} items={seriesItems} />
       <Footer />
     </div>
   );

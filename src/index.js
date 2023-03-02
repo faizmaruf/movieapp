@@ -6,6 +6,7 @@ import Movie from "./view/Movie/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TvSeries from "./view/TVSeries";
 import NotFound from "./view/NotFound";
+import Detail from "./view/Detail";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route index path="/" element={<Home />} />
           <Route path="/movie" element={<Movie />} />
           <Route path="/tvseries" element={<TvSeries />} />
+          <Route path="/detail/:id/:category" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -18,14 +18,22 @@ const TrandingMovies = () => {
     };
     getMovies();
   }, []);
+  // console.log(movieItems, "ini di [movieItems");
+  const dataItems = movieItems.map((item) => {
+    return {
+      id: item.id,
+      title: item.original_title ? item.original_title : item.original_name ? item.original_name : item.name,
+      poster: apiConfig.originalImage(item?.poster_path),
+    };
+  });
 
   return (
     <div className="text-white text-3xl container ">
       <h2 className="text-head-h2">Tranding Movies</h2>
-      <div className="flex flex-col h-full h w-full overflow-auto no-scrollbar ">
+      <div className="flex flex-col h-full h w-full overflow-auto no-scrollbar overflow-y-hidden ">
         <div className="flex min-w-min h-full text-white mt-6  gap-x-6">
-          {movieItems.map((item, i) => (
-            <CardFilm key={i} movieItem={item} />
+          {dataItems.map((item, i) => (
+            <CardFilm key={i} category={"movie"} item={item} />
           ))}
         </div>
       </div>
