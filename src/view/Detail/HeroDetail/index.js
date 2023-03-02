@@ -9,7 +9,10 @@ const HeroDetail = (props) => {
   const background = apiConfig.originalImage(item?.backdrop_path);
   const poster = apiConfig.originalImage(item?.poster_path);
   const title = category == "movie" ? item?.original_title : item?.original_name;
-  // console.log(item);
+  const release_date = category == "movie" ? item?.release_date : item?.first_air_date;
+  const runtime = category == "movie" ? item?.runtime + " min" : item?.number_of_episodes + " episodes (" + item?.number_of_seasons + " seasons)";
+
+  console.log(item);
   return (
     <div className="relative w-full h-screen">
       <div className="absolute w-full  h-full text-white z-20 flex">
@@ -26,10 +29,10 @@ const HeroDetail = (props) => {
                   </p>
                 </div>
                 <div className="flex pr-2 flex-col border-r">
-                  <p className="block my-auto basis-2/12 text-sm">{item.release_date}</p>
+                  <p className="block my-auto basis-2/12 text-sm">{release_date}</p>
                 </div>
                 <div className="flex pr-2 flex-col border-r">
-                  <p className="block my-auto basis-2/12 text-sm ">{item.runtime} min</p>
+                  <p className="block my-auto basis-2/12 text-sm ">{runtime} </p>
                 </div>
                 <div className="flex pr-2 flex-col border-r">
                   <p className="block my-auto basis-2/12 text-sm text-green-400">{item.status}</p>

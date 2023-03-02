@@ -52,7 +52,7 @@ function Home() {
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
-      <Hero movieItems={movieItems} />
+      <Hero movieItems={movieItems} category={"movie"} />
       <TrandingMovies />
       <Catalog category={"movie"} countItem={countItem} items={movieItems} />
       <Catalog category={"tv"} countItem={countItem} items={seriesItems} />

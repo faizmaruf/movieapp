@@ -2,23 +2,26 @@ import { Gradient } from "@mui/icons-material";
 import { React, useState } from "react";
 import apiConfig from "../../../api/apiConfig";
 import ModalTrailer from "../../../components/ModalTrailer";
+import { useNavigate } from "react-router-dom";
 
 const Hero = (props) => {
-  const { movieItems } = props;
+  const navigate = useNavigate();
+  const { movieItems, category } = props;
   const movieItem = movieItems.slice(7, 8);
   const background = apiConfig.originalImage(movieItem[0]?.backdrop_path);
   const poster = apiConfig.originalImage(movieItem[0]?.poster_path);
 
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpenModalTrailer = () => {
     setOpen(true);
   };
-
+  const handleClickWatch = (id, category) => {
+    navigate(`/detail/${id}/${category}`);
+  };
   const handleClose = () => {
     setOpen(false);
   };
-  let srcVideo = "";
 
   return (
     <div className="relative w-full h-screen">
@@ -28,11 +31,13 @@ const Hero = (props) => {
             <h1 className="font-bold text-4xl md:text-7xl">{movieItem[0]?.original_title}</h1>
             <p className="font-bold text-xs md:text-sm">{movieItem[0]?.overview}hvhv</p>
             <div className="flex gap-x-3">
-              <button className="bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold">Watch Now</button>
-              <button className="bg-white border-white rounded-3xl py-2 px-6 text-primary shadow-xl font-semibold" onClick={handleClickOpen}>
+              <button className="bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold" onClick={() => handleClickWatch(movieItem[0]?.id, category)}>
+                Watch Now
+              </button>
+              <button className="bg-white border-white rounded-3xl py-2 px-6 text-primary shadow-xl font-semibold" onClick={handleClickOpenModalTrailer}>
                 Watch Trailer
               </button>
-              <ModalTrailer isOpen={open} handleClose={handleClose} srcVideo={srcVideo} />
+              <ModalTrailer isOpen={open} handleClose={handleClose} id={movieItem[0]?.id} category={category} />
             </div>
           </div>
           <div className="basis-5/12 xl:px-24 md:px-0 hidden md:block">

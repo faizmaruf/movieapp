@@ -3,7 +3,6 @@ import apiConfig from "../../api/apiConfig";
 
 const Table = (props) => {
   const { items } = props;
-  //   console.log(items, "items di table");
   const background = apiConfig.w500Image(items.still_path);
   return (
     <div className="text-white my-auto text-3xl container min-h-full relative z-20 mt-16 md:mt-24">
@@ -12,9 +11,10 @@ const Table = (props) => {
         <table class="table-auto border-separate  border-spacing-0 md:border-spacing-3">
           <thead>
             <tr>
-              <th className="border border-slate-500">No</th>
-              <th className="border border-slate-500">Episode Name</th>
-              <th className="border border-slate-500">Duration</th>
+              <th className="border border-slate-500 text-lg">No</th>
+              <th className="border border-slate-500 text-lg">Episode Name</th>
+              <th className="border border-slate-500 text-lg">Season</th>
+              <th className="border border-slate-500 text-lg">Duration</th>
             </tr>
           </thead>
           <tbody>
@@ -22,6 +22,7 @@ const Table = (props) => {
               <tr key={index} className="text-sm md:text-xl">
                 <td className="text-center">{index + 1}.</td>
                 <td className="pl-4 md:pl-5">{item.name}</td>
+                <td className="pl-4 md:pl-5">1</td>
                 <td className="text-center">{item.runtime ? item.runtime : "0"} min</td>
               </tr>
             ))}

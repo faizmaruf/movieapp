@@ -6,6 +6,7 @@ import Loading from "../../components/Loading";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CatalogEpisodes from "./CatalogEpisodes";
+import Trailer from "./Trailer";
 
 const Detail = () => {
   const { id, category } = useParams();
@@ -34,6 +35,7 @@ const Detail = () => {
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
       <HeroDetail item={item} category={category} />
+      <Trailer id={id} category={category} />
       {category == "tv" && <CatalogEpisodes id={id} category={category} />}
       <Footer />
     </div>
