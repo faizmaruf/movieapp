@@ -4,13 +4,11 @@ import Footer from "../../components/Footer/Index";
 import footerbg from "../../../src/assets/images/footer-bg-movie-app.jpeg";
 import Catalog from "../../components/Catalog";
 import axios from "axios";
-import apiConfig from "../../api/apiConfig";
 import Loading from "../../components/Loading";
 import SearchBar from "../../components/SearchBar";
 
 const Movie = () => {
   const [movieItems, setMovieItems] = useState([]);
-  const [coba, setCoba] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const countItem = 20;
@@ -75,6 +73,7 @@ const Movie = () => {
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg "></div>
         <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />
       </div>
+
       <Footer />
     </div>
   );

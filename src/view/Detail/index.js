@@ -7,6 +7,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import CatalogEpisodes from "./CatalogEpisodes";
 import Trailer from "./Trailer";
+import SimilarMovies from "./SimilarMovies";
 
 const Detail = () => {
   const { id, category } = useParams();
@@ -36,6 +37,7 @@ const Detail = () => {
       <Header />
       <HeroDetail item={item} category={category} />
       <Trailer id={id} category={category} />
+      {category == "movie" && <SimilarMovies id={id} />}
       {category == "tv" && <CatalogEpisodes id={id} category={category} />}
       <Footer />
     </div>

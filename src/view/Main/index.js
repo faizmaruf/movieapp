@@ -5,13 +5,8 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer/Index";
 import Hero from "./Hero";
-import HeroDetail from "../Detail/HeroDetail";
 import TrandingMovies from "./TrandingMovies";
 import Catalog from "../../components/Catalog";
-
-import { category, movieType, tvType } from "../../api/tmdbApi";
-import tmdbApi from "../../api/tmdbApi";
-import apiConfig from "../../api/apiConfig";
 import Loading from "../../components/Loading";
 
 function Home() {

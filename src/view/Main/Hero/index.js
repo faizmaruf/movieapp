@@ -25,8 +25,8 @@ const Hero = (props) => {
 
   return (
     <div className="relative w-full h-screen">
-      <div className="absolute w-full  h-full text-white z-20 flex md:mt-0">
-        <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row gap-7">
+      <div className="absolute w-full  h-full text-white z-20 flex md:mt-0 ">
+        <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row gap-7 ">
           <div className="basis-7/12 flex flex-col gap-y-6 md:gap-y-9 justify-center px-2">
             <h1 className="font-bold text-4xl md:text-7xl">{movieItem[0]?.original_title}</h1>
             <p className="font-bold text-xs md:text-sm">{movieItem[0]?.overview}hvhv</p>

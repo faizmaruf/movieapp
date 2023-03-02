@@ -27,7 +27,6 @@ export default function ModalTrailer(props) {
   }, []);
 
   const keyVideo = item[item.length - 1]?.key;
-  console.log(item, "di modal");
 
   return (
     <div>
