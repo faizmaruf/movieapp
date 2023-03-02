@@ -6,6 +6,7 @@ import Catalog from "../../components/Catalog";
 import axios from "axios";
 import apiConfig from "../../api/apiConfig";
 import Loading from "../../components/Loading";
+import SearchBar from "../../components/SearchBar";
 
 const Movie = () => {
   const [movieItems, setMovieItems] = useState([]);
@@ -29,10 +30,13 @@ const Movie = () => {
   if (isLoading) {
     return <Loading />;
   }
-  console.log(movieItems, "movieitems di movie catalog");
+  // console.log(movieItems, "movieitems di movie catalog");
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
+      <div className="text-white my-auto text-3xl container min-h-full relative z-20 mt-16 md:mt-24 ">
+        <SearchBar />
+      </div>
       <div className="relative w-full min-h-screen">
         <Catalog category={"movie"} countItem={countItem} items={movieItems} />
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg  "></div>
