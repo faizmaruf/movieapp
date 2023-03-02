@@ -3,10 +3,26 @@ import Loading from "../../../components/Loading";
 import Catalog from "../../../components/Catalog";
 import axios from "axios";
 import footerbg from "../../../assets/images/footer-bg-movie-app.jpeg";
+import Table from "../../../components/Table";
 
 const CatalogEpisodes = (props) => {
   const { id, category } = props;
-  const [episodes, setEpisodes] = useState([]);
+  const [episodes, setEpisodes] = useState({
+    air_date: "2022-09-20",
+    episode_number: 3,
+    id: 3959362,
+    name: "Episode 3",
+    overview: "",
+    production_code: "",
+    runtime: 39,
+    season_number: 1,
+    show_id: 209247,
+    still_path: "/4w9vY2jHN73z2podJlKJcU2DUSP.jpg",
+    vote_average: 0.0,
+    vote_count: 0,
+    crew: [],
+    guest_stars: [],
+  });
   const [isLoading, setIsLoading] = useState(true);
   const countItem = 0;
   useEffect(() => {
@@ -31,10 +47,11 @@ const CatalogEpisodes = (props) => {
   return (
     <div className="relative w-full min-h-screen">
       {/* <Catalog category={"tv"} countItem={countItem} items={episodes} /> */}
+      {!isLoading && <Table items={episodes} />}
       <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
       <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
       <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />
-      <div className="font-bold text-white">vhjewuivbiuwev</div>
+      {/* <div className="font-bold text-white">vhjewuivbiuwev</div> */}
     </div>
   );
 };
