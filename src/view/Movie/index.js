@@ -29,6 +29,7 @@ const Movie = () => {
   if (isLoading) {
     return <Loading />;
   }
+  console.log(movieItems, "movieitems di movie catalog");
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />

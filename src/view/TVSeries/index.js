@@ -4,7 +4,6 @@ import footerbg from "../../../src/assets/images/footer-bg-movie-app.jpeg";
 import Footer from "../../components/Footer/Index";
 import Catalog from "../../components/Catalog";
 import axios from "axios";
-import apiConfig from "../../api/apiConfig";
 import Loading from "../../components/Loading";
 
 function TvSeries() {

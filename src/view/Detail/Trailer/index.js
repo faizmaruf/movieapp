@@ -27,8 +27,7 @@ const Trailer = (props) => {
     return <Loading />;
   }
   const keyVideo = item[item.length - 1]?.key;
-  //   console.log(props, "props");
-  //   console.log(item, "videnoih");
+
   return (
     <div className="relative w-full h-screen">
       <div className="absolute w-full  h-full text-white z-20 flex ">
@@ -44,9 +43,7 @@ const Trailer = (props) => {
       </div>
 
       <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg  "></div>
-      {/* <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg "></div> */}
       <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />
-      {/* <img src={background} className="object-cover w-full h-full absolute z-0 overflow-hidden" /> */}
     </div>
   );
 };

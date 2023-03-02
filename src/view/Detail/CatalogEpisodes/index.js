@@ -46,12 +46,10 @@ const CatalogEpisodes = (props) => {
 
   return (
     <div className="relative w-full min-h-screen">
-      {/* <Catalog category={"tv"} countItem={countItem} items={episodes} /> */}
       {!isLoading && <Table items={episodes} />}
       <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
       <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
       <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />
-      {/* <div className="font-bold text-white">vhjewuivbiuwev</div> */}
     </div>
   );
 };
