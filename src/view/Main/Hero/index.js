@@ -19,7 +19,7 @@ const Hero = (props) => {
 
   return (
     <div>
-      <Swiper autoplay={{ delay: 5000 }} spaceBetween={10} slidesPerView={1} grabCursor={true} pagination={{ clickable: true }}>
+      <Swiper autoplay={{ delay: 4000 }} spaceBetween={10} slidesPerView={1} grabCursor={true} pagination={{ clickable: true }}>
         {movieItems.slice(0, 10).map((movieItem, i) => (
           <SwiperSlide key={i}>
             <div className="relative w-full h-screen">
@@ -29,10 +29,10 @@ const Hero = (props) => {
                     <h1 className="font-bold text-4xl md:text-7xl">{movieItem?.original_title}</h1>
                     <p className="font-bold text-xs md:text-sm">{movieItem?.overview}</p>
                     <div className="flex gap-x-3">
-                      <button className="bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold" onClick={() => handleClickWatch(movieItem?.id, category)}>
+                      <button className="hover:scale-105 transition duration-100 ease-in-out bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold" onClick={() => handleClickWatch(movieItem?.id, category)}>
                         Watch Now
                       </button>
-                      <button className="bg-white border-white rounded-3xl py-2 px-6 text-primary shadow-xl font-semibold" onClick={() => handleClickOpenModalTrailer(movieItem?.id, category)}>
+                      <button className="hover:scale-105 transition duration-100 ease-in-out bg-white border-white rounded-3xl py-2 px-6 text-primary shadow-xl font-semibold" onClick={() => handleClickOpenModalTrailer(movieItem?.id, category)}>
                         Watch Trailer
                       </button>
                     </div>
