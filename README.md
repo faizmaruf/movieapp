@@ -4,11 +4,6 @@
 
 ### Overview of product
 
-Lauretta Property Management App is a dashboard that will consume data from 1 shopping malls cameras and use it to generate dashboards for property management and retail analytics
-
-A set of AI algorithms process that data to allow tracking and classification of users through the mall.
-A second set of algorithms using a Re-ID method to match images of persons across cameras, allowing for tracking of the user over distance
-
 RSHB TV Web App merupakan app yang menampilkan informasi film maupun series dari seluruh dunia, App ini bertujuan untuk menuntaskan technical test dari tahapan recruitment Web Programmer RSHB.
 
 ## Project Setup
@@ -25,7 +20,7 @@ npm i
 npm run start
 ```
 
-# Resource
+## Resource
 
     Tailwind : https://tailwindcss.com/
 
