@@ -82,6 +82,18 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+  color: red;
+}
+
+.swiper-container .swiper-pagination-bullet {
+  background-color: red;
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+  background-color: blue;
+}
 
 @media (min-width: 576px) {
   .container {
