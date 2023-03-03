@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  outline-color: black;
+  opacity: 0.6;
+
+  @apply shadow-2xl hidden md:block;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+}
+.swiper-pagination-bullet-active {
+  background-color: white;
+}

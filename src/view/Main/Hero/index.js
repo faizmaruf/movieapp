@@ -1,18 +1,17 @@
 import { Gradient } from "@mui/icons-material";
 import { React, useState } from "react";
 import apiConfig from "../../../api/apiConfig";
-
 import { useNavigate } from "react-router-dom";
-import SwiperCore, { Navigation, Pagination } from "swiper/core";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Autoplay } from "swiper";
+import "../../../style.css";
 
 const Hero = (props) => {
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const navigate = useNavigate();
   const { movieItems, category, handleClickOpenModalTrailer } = props;
-  // const movieItem = movieItems.slice(7, 8);
 
   const handleClickWatch = (id, category) => {
     navigate(`/detail/${id}/${category}`);
@@ -20,11 +19,11 @@ const Hero = (props) => {
 
   return (
     <div>
-      <Swiper spaceBetween={10} slidesPerView={1} grabCursor={true} navigation pagination={{ clickable: true }}>
-        {movieItems.map((movieItem, i) => (
+      <Swiper autoplay={{ delay: 5000 }} spaceBetween={10} slidesPerView={1} grabCursor={true} pagination={{ clickable: true }}>
+        {movieItems.slice(0, 10).map((movieItem, i) => (
           <SwiperSlide key={i}>
             <div className="relative w-full h-screen">
-              <div className="absolute w-full  h-full text-white z-20 flex md:mt-0 ">
+              <div className="absolute w-full  h-full text-white z-20 flex md:mt-0 opa ">
                 <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row gap-7 ">
                   <div className="basis-7/12 flex flex-col gap-y-6 md:gap-y-9 justify-center px-2">
                     <h1 className="font-bold text-4xl md:text-7xl">{movieItem?.original_title}</h1>
