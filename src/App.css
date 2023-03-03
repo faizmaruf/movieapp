@@ -19,15 +19,8 @@
   padding-left: 5px;
   margin-right: auto;
   margin-left: auto;
-  /* min-height: ; */
-  /* margin-bottom: 3rem; */
 }
-/* .container {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 3rem;
-} */
+
 .bottom-navigation {
   position: fixed;
   bottom: 0;

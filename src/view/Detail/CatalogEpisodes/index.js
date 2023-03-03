@@ -42,7 +42,6 @@ const CatalogEpisodes = (props) => {
   if (isLoading) {
     return <Loading />;
   }
-  // console.log(episodes, "ini episodes");
 
   return (
     <div className="relative w-full min-h-screen">

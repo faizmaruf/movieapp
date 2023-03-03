@@ -11,12 +11,10 @@ const HeroDetail = (props) => {
   const title = category == "movie" ? item?.original_title : item?.original_name;
   const release_date = category == "movie" ? item?.release_date : item?.first_air_date;
   const runtime = category == "movie" ? item?.runtime + " min" : item?.number_of_episodes + " episodes (" + item?.number_of_seasons + " seasons)";
-
-  console.log(item);
   return (
     <div className="relative w-full h-screen">
       <div className="absolute w-full  h-full text-white z-20 flex">
-        <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row-reverse ">
+        <div className="container my-auto flex h-[32rem] flex-col-reverse  lg:flex-row-reverse ">
           <div className="basis-7/12 flex flex-col gap-y-3 md:gap-y-5 justify-center px-2">
             <h1 className="font-bold text-4xl md:text-7xl">{title}</h1>
 
@@ -48,7 +46,7 @@ const HeroDetail = (props) => {
               ))}
             </div>
           </div>
-          <div className="basis-5/12 xl:px-24 md:px-0 hidden md:block">
+          <div className="basis-5/12 xl:px-24 md:px-0 hidden lg:block">
             <img src={poster} className="object-cover w-full overflow-hidden hidden md:block rounded-3xl py-1 h-full" />
           </div>
         </div>

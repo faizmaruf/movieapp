@@ -24,10 +24,10 @@ const Hero = (props) => {
           <SwiperSlide key={i}>
             <div className="relative w-full h-screen">
               <div className="absolute w-full  h-full text-white z-20 flex md:mt-0 opa ">
-                <div className="container my-auto flex h-[32rem] flex-col-reverse  md:flex-row gap-7 ">
+                <div className="container my-auto flex h-[32rem] flex-col-reverse  lg:flex-row gap-7 ">
                   <div className="basis-7/12 flex flex-col gap-y-6 md:gap-y-9 justify-center px-2">
                     <h1 className="font-bold text-4xl md:text-7xl">{movieItem?.original_title}</h1>
-                    <p className="font-bold text-xs md:text-sm">{movieItem?.overview}hvhv</p>
+                    <p className="font-bold text-xs md:text-sm">{movieItem?.overview}</p>
                     <div className="flex gap-x-3">
                       <button className="bg-primary border-primary rounded-3xl py-2 px-6 shadow-2xl font-semibold" onClick={() => handleClickWatch(movieItem?.id, category)}>
                         Watch Now
@@ -37,7 +37,7 @@ const Hero = (props) => {
                       </button>
                     </div>
                   </div>
-                  <div className="basis-5/12 xl:px-24 md:px-0 hidden md:block">
+                  <div className="basis-5/12 xl:px-24 md:px-0 hidden lg:block">
                     <img src={apiConfig.originalImage(movieItem?.poster_path)} className="object-cover w-full overflow-hidden hidden md:block  rounded-3xl py-1 h-full" />
                   </div>
                 </div>

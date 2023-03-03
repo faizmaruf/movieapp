@@ -15,7 +15,8 @@ const CardFilm = (props) => {
   const navigate = useNavigate();
   let [over, setOver] = useState(false);
 
-  const handleClickPlay = (id, category) => {
+  const handleClickPlay = (event, id, category) => {
+    event.preventDefault();
     navigate(`/detail/${id}/${category}`);
   };
   const { key, category, item } = props;
@@ -23,7 +24,7 @@ const CardFilm = (props) => {
 
   return (
     <div className="flex flex-col  rounded-lg h-96 w-52" key={key}>
-      <div className="basis-11/12 relative" onMouseOver={() => setOver(true)} onMouseOut={() => setOver(false)} onClick={() => handleClickPlay(item.id, category)}>
+      <div className="basis-11/12 relative" onMouseOver={() => setOver(true)} onMouseOut={() => setOver(false)} onClick={(e) => handleClickPlay(e, item.id, category)}>
         <img src={background} className="object-cover rounded-3xl shadow-2xl h-full z-0 overflow-hidden" />
         {over && <ButtonPlay />}
       </div>

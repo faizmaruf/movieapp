@@ -13,7 +13,6 @@ const Detail = () => {
   const { id, category } = useParams();
   const [item, setDetailItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // let isSeries = false;
 
   useEffect(() => {
     const getDetail = async () => {
@@ -28,16 +27,17 @@ const Detail = () => {
       }
     };
     getDetail();
-  }, []);
+  }, [id]);
   if (isLoading) {
     return <Loading />;
   }
+
   return (
     <div className="container-main bg-primaryBg flex flex-col gap-y-12">
       <Header />
       <HeroDetail item={item} category={category} />
       <Trailer id={id} category={category} />
-      {category == "movie" && <SimilarMovies id={id} />}
+      {/* {category == "movie" && <SimilarMovies id={id} />} */}
       {category == "tv" && <CatalogEpisodes id={id} category={category} />}
       <Footer />
     </div>

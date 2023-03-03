@@ -11,7 +11,7 @@ const ScrollCard = (props) => {
       poster: apiConfig.originalImage(item?.poster_path),
     };
   });
-  console.log(items, "items di scrollcard");
+
   return (
     <div className="flex flex-col h-full h w-full overflow-auto no-scrollbar overflow-y-hidden ">
       <div className="flex min-w-min h-full text-white mt-6  gap-x-6">
