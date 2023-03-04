@@ -5,21 +5,26 @@ import Footer from "../../components/Footer/Index";
 import Catalog from "../../components/Catalog";
 import axios from "axios";
 import Loading from "../../components/Loading";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 import SearchBar from "../../components/SearchBar";
 
 function TvSeries() {
   const [seriesItems, setSeriesItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const countItem = 20;
 
   useEffect(() => {
+    setIsLoading(true);
     const getTvSeries = async () => {
       try {
         const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
         const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&page=1`);
         setSeriesItems(response.data.results);
+        setIsLoading(false);
       } catch (error) {
         console.log(error, " << error");
       } finally {
@@ -41,10 +46,12 @@ function TvSeries() {
   };
 
   const handleSearchRequest = async () => {
+    setIsLoadingSearch(true);
     const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
     try {
       const response = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${searchQuery}`);
       setSeriesItems(response.data.results);
+      setIsLoadingSearch(false);
     } catch (error) {
       console.log(error, " << error");
     } finally {
@@ -67,7 +74,18 @@ function TvSeries() {
         <SearchBar searchQuery={searchQuery} handleInputChange={handleInputChange} />
       </div>
       <div className="relative w-full min-h-screen">
-        <Catalog category={"tv"} countItem={countItem} items={seriesItems} />
+        {isLoadingSearch ? (
+          <div className="text-white my-auto text-3xl container h-[60vh] relative z-20 mt-0">
+            <h2 className="text-head-h2">TV Series</h2>
+            <div className="flex flex-col min-h-full w-full ">
+              <Box sx={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+                <CircularProgress />
+              </Box>
+            </div>
+          </div>
+        ) : (
+          <Catalog category={"tv"} countItem={countItem} items={seriesItems} />
+        )}
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
         <div className="w-full h-full absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-primaryBg"></div>
         <img src={footerbg} className=" w-full object-cover h-full absolute bottom-0 z-0 overflow-hidden" />
