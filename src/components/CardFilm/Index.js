@@ -37,7 +37,7 @@ const CardFilm = (props) => {
   useEffect(() => {
     if (state.id !== null) {
       navigate(`/detail/${state.id}/${state.category}`, { replace: true, state: { key: `detail/${state.id}/${state.category}` } });
-      window.location.reload();
+      // window.location.reload();
       window.scrollTo(0, 0);
     }
   }, [state.id !== null]);
