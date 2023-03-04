@@ -37,7 +37,7 @@ const Detail = () => {
       <Header />
       <HeroDetail item={item} category={category} />
       <Trailer id={id} category={category} />
-      {/* {category == "movie" && <SimilarMovies id={id} />} */}
+      {category == "movie" && <SimilarMovies id={id} />}
       {category == "tv" && <CatalogEpisodes id={id} category={category} />}
       <Footer />
     </div>

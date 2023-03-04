@@ -18,7 +18,7 @@ const SearchBar = (props) => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-base  border border-gray-300 rounded-lg bg-primaryBg   dark:border-gray-600 placeholder-gray-400 text-white" placeholder="Search ..." required defaultValue={searchQuery} onChange={(e) => handleInputChange(e.target.value)} />
+        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-base  border border-gray-300 rounded-lg bg-primaryBg   dark:border-gray-600 placeholder-gray-400 text-white" placeholder="Search ..." required defaultValue={searchQuery} onChange={(e) => handleInputChange(e.target.value)} autoComplete="off" />
       </div>
     </form>
   );

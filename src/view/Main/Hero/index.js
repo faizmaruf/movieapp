@@ -19,7 +19,7 @@ const Hero = (props) => {
 
   return (
     <div>
-      <Swiper autoplay={{ delay: 4000 }} spaceBetween={10} slidesPerView={1} grabCursor={true} pagination={{ clickable: true }}>
+      <Swiper autoplay={{ delay: 7500 }} spaceBetween={10} slidesPerView={1} grabCursor={true} navigation pagination={{ clickable: true }}>
         {movieItems.slice(0, 10).map((movieItem, i) => (
           <SwiperSlide key={i}>
             <div className="relative w-full h-screen">

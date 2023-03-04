@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  /* border: 1px solid yellow; */
+  border: 1px solid yellow;
   /* overflow-x: hidden; Hide horizontal scrollbar */
 }
 
