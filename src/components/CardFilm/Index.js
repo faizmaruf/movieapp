@@ -28,17 +28,13 @@ const CardFilm = (props) => {
     category: null,
   });
 
-  // const handleClickPlay = (event, id, category) => {
-  //   event.preventDefault();
-  //   navigate(`/detail/${id}/${category}`);
-  // };
   const { key, category, item } = props;
   const background = apiConfig.w500Image(item?.poster);
   useEffect(() => {
     if (state.id !== null) {
       navigate(`/detail/${state.id}/${state.category}`, { replace: true, state: { key: `detail/${state.id}/${state.category}` } });
-      // window.location.reload();
-      window.scrollTo(0, 0);
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [state.id !== null]);
 

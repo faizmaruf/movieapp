@@ -15,13 +15,17 @@ const Movie = () => {
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const countItem = 20;
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 100) + 1;
+  };
 
   useEffect(() => {
     setIsLoading(true);
     const getMovies = async () => {
       try {
+        const page = generateRandomNumber();
         const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`);
+        const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page}`);
         setMovieItems(response.data.results);
         setIsLoading(false);
       } catch (error) {
