@@ -9,7 +9,7 @@ const Catalog = (props) => {
     return {
       id: item.id,
       title: item.original_title ? item.original_title : item.original_name ? item.original_name : item.name,
-      poster: apiConfig.originalImage(item?.poster_path),
+      poster: apiConfig.w500Image(item?.poster_path),
     };
   });
 

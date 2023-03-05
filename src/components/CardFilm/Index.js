@@ -33,7 +33,7 @@ const CardFilm = (props) => {
   //   navigate(`/detail/${id}/${category}`);
   // };
   const { key, category, item } = props;
-  const background = apiConfig.originalImage(item?.poster);
+  const background = apiConfig.w500Image(item?.poster);
   useEffect(() => {
     if (state.id !== null) {
       navigate(`/detail/${state.id}/${state.category}`, { replace: true, state: { key: `detail/${state.id}/${state.category}` } });

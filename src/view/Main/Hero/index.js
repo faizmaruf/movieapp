@@ -38,7 +38,7 @@ const Hero = (props) => {
                     </div>
                   </div>
                   <div className="basis-5/12 xl:px-24 md:px-0 hidden lg:block">
-                    <img src={apiConfig.originalImage(movieItem?.poster_path)} className="object-cover w-full overflow-hidden hidden md:block  rounded-3xl py-1 h-full" />
+                    <img src={apiConfig.w500Image(movieItem?.poster_path)} className="object-cover w-full overflow-hidden hidden md:block  rounded-3xl py-1 h-full" />
                   </div>
                 </div>
               </div>

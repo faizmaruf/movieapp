@@ -7,7 +7,7 @@ const HeroDetail = (props) => {
   const { item, category } = props;
   const genres = item?.genres;
   const background = apiConfig.originalImage(item?.backdrop_path);
-  const poster = apiConfig.originalImage(item?.poster_path);
+  const poster = apiConfig.w500Image(item?.poster_path);
   const title = category == "movie" ? item?.original_title : item?.original_name;
   const release_date = category == "movie" ? item?.release_date : item?.first_air_date;
   const runtime = category == "movie" ? item?.runtime + " min" : item?.number_of_episodes + " episodes (" + item?.number_of_seasons + " seasons)";
