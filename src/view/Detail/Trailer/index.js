@@ -22,7 +22,7 @@ const Trailer = (props) => {
       }
     };
     getVideos();
-  }, []);
+  }, [id, category]);
   if (isLoading) {
     return <Loading />;
   }

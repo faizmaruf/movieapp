@@ -17,7 +17,8 @@ const SimilarMovies = (props) => {
       }
     };
     getMoviesSimilar();
-  }, []);
+  }, [id]);
+
   return (
     <div className="text-white text-3xl container ">
       <h2 className="text-head-h2">Similar Movies</h2>
