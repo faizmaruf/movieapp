@@ -1,37 +1,45 @@
 # Web Movie & Serial (RSHB TV)
 
-## Documentation
+RSHB TV Web App is an app that displays information on movies and series from around the world. This App aims to complete the technical test of the RSHB Web Programmer recruitment stage.
 
-### Overview of product
+## Demo
 
-RSHB TV Web App merupakan app yang menampilkan informasi film maupun series dari seluruh dunia, App ini bertujuan untuk menuntaskan technical test dari tahapan recruitment Web Programmer RSHB.
+https://bright-babka-0e7e83.netlify.app/
 
-## Project Setup
+## Screenshots
 
-### Install Required Node Modules
+![App Screenshot](https://res.cloudinary.com/dlmpgu7kw/image/upload/v1678063793/screenshot_lxp3fe.png)
 
-```
-npm i
-```
+## Run Locally
 
-## Running the app
+Clone the project
 
-```
-npm run start
+```bash
+  git clone https://github.com/faizmaruf/movieapp.git
 ```
 
-## Resource
+Go to the project directory
 
-    Tailwind : https://tailwindcss.com/
+```bash
+  cd movieapp
+```
 
-    Google font: https://fonts.google.com/
+Install dependencies
 
-    Material Icons: https://mui.com/material-ui/material-icons/
+```bash
+  npm install
+```
 
-    API: https://www.themoviedb.org/
+Start the server
 
-    Material UI: https://mui.com/material-ui/
+```bash
+  npm run start
+```
 
-    Axios: https://axios-http.com/docs/intro
+## Tech Stack
 
-    React Router: https://reactrouter.com/en/main
+**Client:** React JS, TailwindCSS, Material Icons, Material UI, Axios, React Router, AOS
+
+## Authors
+
+- [@faizmaruf\_](https://www.instagram.com/faizmaruf_/)
