@@ -6,7 +6,7 @@ RSHB TV Web App is an app that displays information on movies and series from ar
 
 https://bright-babka-0e7e83.netlify.app/
 
-## Screenshots
+## Preview
 
 ![App Screenshot](https://res.cloudinary.com/dlmpgu7kw/image/upload/v1678063793/screenshot_lxp3fe.png)
 
@@ -15,25 +15,25 @@ https://bright-babka-0e7e83.netlify.app/
 Clone the project
 
 ```bash
-  git clone https://github.com/faizmaruf/movieapp.git
+git clone https://github.com/faizmaruf/movieapp.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd movieapp
+cd movieapp
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+npm install
 ```
 
 Start the server
 
 ```bash
-  npm run start
+npm run start
 ```
 
 ## Tech Stack

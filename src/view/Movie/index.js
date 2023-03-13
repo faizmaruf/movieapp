@@ -14,6 +14,8 @@ const Movie = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [timerId, setTimerId] = useState(null);
+
   const countItem = 20;
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100) + 1;
@@ -37,18 +39,6 @@ const Movie = () => {
     getMovies();
   }, []);
 
-  const debounce = (func, delay) => {
-    let timerId;
-    return function (...args) {
-      if (timerId) {
-        clearTimeout(timerId);
-      }
-      timerId = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
-    };
-  };
-
   const handleSearchRequest = async () => {
     setIsLoadingSearch(true);
     const API_KEY = "cfdb19c9d57dcdf0f52c10506187d04e";
@@ -63,11 +53,25 @@ const Movie = () => {
     }
   };
 
+  const SEARCH_DELAY = 1850;
   const handleInputChange = (event) => {
-    setSearchQuery(event);
-    delayedSearchRequest();
+    const newQuery = event;
+    setSearchQuery(newQuery);
+
+    // Hapus timer sebelumnya
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+
+    // Mulai timer baru
+    setTimerId(
+      setTimeout(() => {
+        handleSearchRequest();
+        setTimerId(null);
+      }, SEARCH_DELAY)
+    );
   };
-  const delayedSearchRequest = debounce(handleSearchRequest, 3000);
+
   if (isLoading) {
     return <Loading />;
   }

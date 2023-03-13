@@ -14,7 +14,7 @@ const BottomBarNavigation = () => {
   return (
     <div>
       <div className="bottom-navigation py-2">
-        <div className="w-full h-full flex justify-evenly">
+        <div className="w-full h-full flex justify-evenly flex-row-reverse">
           <Link to="/movie">
             <div className="flex flex-col h-full w-28 ">
               <TvIcon sx={{ margin: "0 auto", color: ` ${activePage == "movie" ? "red" : "white"}` }} />
