@@ -1,10 +1,10 @@
 # Web Movie & Serial (RSHB TV)
 
-RSHB TV Web App is an app that displays information on movies and series from around the world. This App aims to complete the technical test of the RSHB Web Programmer recruitment stage.
+RSHB TV Web App is an app that displays information on movies and series from around the world.
 
 ## Demo
 
-https://bright-babka-0e7e83.netlify.app/
+https://movie-listapp.netlify.app/
 
 ## Preview
 
