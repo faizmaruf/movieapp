@@ -42,4 +42,4 @@ npm run start
 
 ## Authors
 
-- [@faizmaruf\_](https://www.instagram.com/faizmaruf_/)
+- [@faizmaruf_\_](https://www.instagram.com/faizmaruf_/)
